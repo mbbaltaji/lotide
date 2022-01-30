@@ -1,4 +1,4 @@
-// Checks if two arrays are equal 
+// CHECK IF TWO ARRAYS ARE EQUAL
 const eqArrays = function(arr1, arr2) {
   if (arr1.every((element, index) => element === arr2[index])){
     return true
@@ -6,34 +6,41 @@ const eqArrays = function(arr1, arr2) {
   return false;
 };
 
-// fitlers itemsToRemove from array
+// FILTERS itemsToRemove FROM ARRAY
 const without = function(array, itemsToRemove){
   let newArr = array;
   let result;
   for (const element of itemsToRemove) {
     for (const val of newArr) {
-      result = newArr.filter(val => val !== element)
+      result = newArr.filter(val => val !== element);
     }
   }
   return result;
 }
 
-//DRIVER 
+
 const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1, arr2)){
-    console.log("✅ Arrays are equal! " + arr1 + ' === ' + arr2);
+    console.log("✅ Assertion Passed: Arrays are equal! " + arr1 + ' === ' + arr2);
   } else{
-    console.log("🛑 Arrays are not equal! " + arr1 + ' !==' + arr2)
+    console.log("🛑 Assertion Failed: Arrays are not equal! " + arr1 + ' !== ' + arr2)
   }
 }
 
 console.log(without([1, 2, 3], [1])); // => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
+// CHECK IF ORIGINAL ARRAY IS ALTERED
 const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
+without(words, ["lighthouse"]); 
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
+// DRIVER CODE
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"] );
+assertArraysEqual(without(["hello", "world", "lighthouse"], 
+["lighthouse"]), ["hello", "world"] );
+assertArraysEqual(without([1, 2, 3], [1]), [2]);
 
 
 
