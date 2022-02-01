@@ -1,10 +1,10 @@
 // CHECK IF TWO ARRAYS ARE EQUAL
 const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
+  if (arr1.length !== arr2.length)
     return false;
-  }
-  else if (arr1.every((element, index) => element === arr2[index])){
-    return true
+  
+  else if (arr1.every((element, index) => element === arr2[index])) {
+    return true;
   }
   return false;
 
@@ -34,5 +34,5 @@ assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => PASS
 assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => FAIL
 assertEqual(eqArrays(['1', '2', '3'], ['1', '2', '3']), true); // => PASS
 assertEqual(eqArrays(['1', '2', '3'], ['1', '2', 3]), true); // => FAIL
-assertEqual(eqArrays([1, 2, 3], [1, 2]), true); // => FAIL 
+assertEqual(eqArrays([1, 2, 3], [1, 2]), true); // => FAIL
 
