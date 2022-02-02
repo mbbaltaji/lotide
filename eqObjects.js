@@ -37,13 +37,15 @@ const eqObjects = function(obj1, obj2) {
   }
 
   for (const key of Object.keys(obj1)) {
-
+    // CHECK IF KEY VALUES IS ARRAY
     if (Array.isArray(Object.keys(obj1[key])) &&
     Array.isArray(Object.keys(obj2[key]))) {
+      //COMAPRE THE TWO ARRAYS OF EACH KEY
       if (!eqArrays(Object.keys(obj1[key]), Object.keys(obj2[key]))) {
         return false;
       }
     }
+    // IF NOT ARRAY COMAPRE THE PRIMITIVE VALUES
     else if (obj1[key] !== obj2[key]) {
       return false;
     }
@@ -51,6 +53,7 @@ const eqObjects = function(obj1, obj2) {
   return true;
 };
 
+//COMAPRING PRIMITVE KEY VALUES
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 assertEqual(eqObjects(ab,ba), true); // => true
@@ -58,7 +61,7 @@ assertEqual(eqObjects(ab,ba), true); // => true
 const abc = { a: "1", b: "2", c: "3" };
 assertEqual(eqObjects(ab, abc), false); // => false
 
-//CHECKING ARRAY VALUES
+//COMPARING ARRAY KEY VALUES
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 assertEqual(eqObjects(cd, dc), true); // => true
