@@ -1,6 +1,6 @@
 //FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
-  if (actual.toString() === expected.toString()) {
+  if (actual === expected) {
     console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
     console.log(`⛔️ Assertion Failed: ${actual} !== ${expected}`);
