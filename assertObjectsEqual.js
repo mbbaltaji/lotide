@@ -18,7 +18,6 @@ const eqArrays = function(arr1, arr2) {
   //   }
   // }
   // return false;
-  
 };
 
 //RETURN TRUE IF TWO OBJECTS ARE EQUAL
@@ -54,7 +53,7 @@ const assertObjectsEqual = function (actual, expected) {
   }
 }
 
-
+ 
 //TEST CODE
 const ab = { a: "1", b: "2"};
 const ba = { b: "2", a: "1" };

@@ -1,6 +1,6 @@
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
-    console.log(`✅ Assertion Passed: Objects are equal! ${actual} === ${expected}`);
+    console.log(`\x1b[32m✅ Assertion Passed: Objects are equal! ${actual} === ${expected}`);
   } else {
     console.log(`⛔️ Assertion Failed: Objects are NOT equal ${actual} !== ${expected}`);
   }
