@@ -4,7 +4,6 @@ const map = require('../map');
 describe('#map', () => { 
   
   const words = ["ground", "control", "to", "major", "tom"];
-  console.log('TEST ARRAY: ', words);
   
   it("should return [ 'g', 'c', 't', 'm', 't' ] for callBack word => word[0]", () => {
     assert.deepEqual(map(words, word => word[0]), [ 'g', 'c', 't', 'm', 't' ]);
