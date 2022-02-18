@@ -12,25 +12,4 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-// CHECK IF TWO ARRAYS ARE EQUAL
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) 
-    return false;
-
-  else if (arr1.every((element, index) => element === arr2[index])) {
-    return true;
-  }
-  return false;
-};
-
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log("✅ Assertion Passed: Arrays are equal! " + arr1 + ' === ' + arr2);
-  } else {
-    console.log("⛔️ Assertion Failed: Arrays are NOT equal! " + arr1 + ' !==' + arr2);
-  }
-};
-
-console.log(letterPositions("hello"));
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("hello").l, [2, 3]);
+module.exports = letterPositions;
